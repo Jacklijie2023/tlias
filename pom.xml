@@ -94,17 +94,8 @@
         <version>2.7.5</version>
       </dependency>
 
-<!--测试Git修改后是否变蓝色-->
-      <dependency>
-        <groupId>org.testcontainers</groupId>
-        <artifactId>testcontainers-bom</artifactId>
-        <version>1.19.8</version>
-      </dependency>
-
-<!--master commit！！！！！！-->
 
     </dependencies>
   </dependencyManagement>
 
-<!--host-fixy !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 </project>
