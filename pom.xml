@@ -1,0 +1,102 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.itheima</groupId>
+  <artifactId>tlias-parent</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+
+<!--模块化管理：用于统一加载打包依赖-->
+  <modules>
+    <module>../tlias-pojo</module>
+  </modules>
+
+
+  <packaging>pom</packaging>
+  <name>Archetype - tlias-parent</name>
+  <url>http://maven.apache.org</url>
+
+
+<!--统一管理依赖的版本-->
+  <properties>
+    <jwt-version>0.9.1</jwt-version>
+    <aliyun-oss-version>3.17.4</aliyun-oss-version>
+    <pagehelper-version>1.4.2</pagehelper-version>
+    <fastjsion-version>1.2.76</fastjsion-version>
+    <jaxb.version>2.3.1</jaxb.version>
+    <activation.version>1.1.1</activation.version>
+    <jaxb.runtime.version>2.3.3</jaxb.runtime.version>
+  </properties>
+
+
+
+<!--直接依赖 :只要子类依赖该父类则会自动继承该直接依赖 (只要继承该项目则相当于公共依赖)-->
+  <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.24</version>
+    </dependency>
+  </dependencies>
+
+
+<!-- 依赖管理：使用时需要在子项目中添加响应的依赖、并且子项目在使用该依赖时无需添加版本标签-->
+  <dependencyManagement>
+    <dependencies>
+    <!--jwt令牌-->
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt</artifactId>
+        <version>${jwt-version}</version>
+      </dependency>
+
+    <!--阿里云OSS-->
+      <dependency>
+        <groupId>com.aliyun.oss</groupId>
+        <artifactId>aliyun-sdk-oss</artifactId>
+        <version>${aliyun-oss-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.xml.bind</groupId>
+        <artifactId>jaxb-api</artifactId>
+        <version>${jaxb.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.activation</groupId>
+        <artifactId>activation</artifactId>
+        <version>${activation.version}</version>
+      </dependency>
+      <!-- no more than 2.3.3-->
+      <dependency>
+        <groupId>org.glassfish.jaxb</groupId>
+        <artifactId>jaxb-runtime</artifactId>
+        <version>${jaxb.runtime.version}</version>
+      </dependency>
+
+    <!--Pagehelper分页插件-->
+      <dependency>
+        <groupId>com.github.pagehelper</groupId>
+        <artifactId>pagehelper-spring-boot-starter</artifactId>
+        <version>${pagehelper-version}</version>
+      </dependency>
+
+    <!--阿里云Fast工具包-->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>${fastjsion-version}</version>
+      </dependency>
+
+      <!--WEB开发-->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+        <version>2.7.5</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+
+
+</project>
