@@ -7,9 +7,9 @@
 
 
 <!--模块化管理：用于统一加载打包依赖-->
-  <modules>
-    <module>../tlias-pojo</module>
-  </modules>
+<!--  <modules>-->
+<!--    <module>../tlias-pojo</module>-->
+<!--  </modules>-->
 
 
   <packaging>pom</packaging>
